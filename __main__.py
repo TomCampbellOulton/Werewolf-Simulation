@@ -110,12 +110,12 @@ def run_simulations(min_num_of_townsfolk=10, max_num_of_townsfolk=100, step=1, n
         # Record the number of townsfolk
         number_of_townfolk.append(num_of_townsfolk)
         # Record the success rate of the townsfolk
-        success_rate = win_counter[1] / simulations_per_step
+        success_rate = 100 * win_counter[1] / (win_counter[0] + win_counter[1])
         win_rate_of_villagers.append(success_rate)
     # Plot the graph
     plot_readings(number_of_townfolk, win_rate_of_villagers)
 
-def main(min_num_of_townsfolk=5, max_num_of_townsfolk=100, step=1, number_of_werewolves=2, simulations_per_step=10000):
+def main(min_num_of_townsfolk=1, max_num_of_townsfolk=100, step=1, number_of_werewolves=2, simulations_per_step=10000):
     run_simulations(min_num_of_townsfolk, max_num_of_townsfolk, step, number_of_werewolves, simulations_per_step)
 
 main()
